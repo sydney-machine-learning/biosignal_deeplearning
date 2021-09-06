@@ -7,7 +7,7 @@ from keras.layers import LSTM, RNN, Embedding, TimeDistributed, Activation
 from keras.layers.convolutional import Conv1D, Conv2D
 from keras.layers.convolutional import MaxPooling1D, MaxPooling2D
 
-def BiLSTM(shape):
+def Bi_LSTM(shape):
     model = Sequential()
     model.add(Bidirectional(LSTM(512,input_shape=(shape[0], shape[1]), return_sequences=True)))
     model.add(Dropout(0.25))   
