@@ -36,4 +36,19 @@ class Attention(Layer):
 
  def LSTM_Attn(shape):
     model = Sequential()
+    model.add(LSTM(512,input_shape=(shape[0], shape[1]), return_sequences=True))
+    model.add(Dropout(0.25))   
+    model.add(LSTM(256, return_sequences=True))
+    model.add(Dropout(0.25))
+    model.add(Attention(return_sequences=False))
+    
+    model.add(Flatten())
+    model.add(Dense(units = 1024,  activation='swish'))
+    model.add(Dropout(0.25))
+    model.add(Dense(units = 1024,  activation='swish'))
+    model.add(Dropout(0.25))
+    model.add(Dense(units = 1024,  activation='swish'))
+    model.add(Dropout(0.25))
+    model.add(Dense(1))
+    model.add(Activation('linear'))
     return(model)
