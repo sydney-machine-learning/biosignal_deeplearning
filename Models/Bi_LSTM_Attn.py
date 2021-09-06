@@ -38,7 +38,7 @@ class Attention(Layer):
     model = Sequential()
     model.add(Bidirectional(LSTM(512,input_shape=(shape[0], shape[1]), return_sequences=True)))
     model.add(Dropout(0.25))   
-    model.add(Bidirectional(LSTM(256)))
+    model.add(Bidirectional(LSTM(256, return_sequences=True)))
     model.add(Dropout(0.25))
     model.add(Attention(return_sequences=False))    
     model.add(Flatten())
