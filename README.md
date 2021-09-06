@@ -7,5 +7,5 @@ How to use this repository?
 3. In main.py, update the directory paths. Update batch size as per memory. In case of GPU: Use Batchsize=10000, TPU: 100000,
 4. Run main.py
 
-1 run takes close to 140 hrs to run on TPU (Includes training on all 7 models).
+1 run takes close to 20 hrs to run on TPU (Includes training on all 7 models).
 Comment appropriate sections (models) in main.py to reduce compuatation time.
